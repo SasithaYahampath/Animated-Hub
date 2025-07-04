@@ -21,6 +21,13 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
+$sql = "CREATE TABLE IF NOT EXISTS videos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    filename VARCHAR(255) NOT NULL,
+    views INT DEFAULT 0,
+    upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
 
 if (!$conn->query($sql)) {
     die("Error creating table: " . $conn->error);
